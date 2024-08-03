@@ -23,6 +23,17 @@ const theme = createTheme({
         fontweight: 600,
       },
     },
+  },
+  components: {
+    MuiBox: {
+      styleOverrides: {
+        root: {
+          "& +.MuiBox-root": {
+            marginTop: 0
+          }
+        }
+      }
+    }
   }
 })
 

@@ -132,33 +132,40 @@ export default function Home() {
                 value={itemName}
                 onChange={(e) => setItemName(e.target.value)}
               />
-              <Button 
-              sx={{
-                color: "white",
-                bgcolor: "secondary.main",
+              <Button
+                sx={{
+                  color: "white",
+                  bgcolor: "secondary.main",
 
-                ":hover": {
-                  backgroundColor: "primary.main",
-                  color: "white"
-                }
-              }}
-              variant="outlined" 
-              onClick={() => {
-                addItem(itemName);
-                setItemName("");
-                handleClose();
-              }}>Add</Button>
+                  ":hover": {
+                    backgroundColor: "primary.main",
+                    color: "white"
+                  }
+                }}
+                variant="outlined"
+                onClick={() => {
+                  addItem(itemName);
+                  setItemName("");
+                  handleClose();
+                }}>Add</Button>
             </Stack>
           </Box>
         </Modal>
-        <Box border="1px solid #333">
+        <Box
+          border="2px solid #333"
+          borderRadius="10px"
+          borderColor="primary.main"
+          bordershadow={24}
+        >
           <Box
             width="800px"
             height="100px"
             display="flex"
             alignItems="center"
             justifyContent="center"
-            borderBottom="1px solid #333"
+            borderBottom="2px solid #333"
+            borderColor="primary.main"
+            bordershadow={24}
           >
             <Typography variant="h2" color="primary.main">
               Inventory Tracker
@@ -166,21 +173,22 @@ export default function Home() {
           </Box>
           <Box
             width="100%"
-            height="100px"
+            height="80px"
             display="flex"
             flexWrap="wrap"
             alignItems="center"
-            justifyContent="center"
-            borderBottom="1px solid #333"
-            p={2}
+            borderBottom="2px solid #333"
+            borderColor="primary.main"
+            bordershadow={24}
+            px={2}
           >
-            <Typography 
-            variant="h6" 
-            color="secondary.main"
-            sx={{
-              flexGrow: 1,
-              width: "33%"
-            }}
+            <Typography
+              variant="h6"
+              color="secondary.main"
+              sx={{
+                flexGrow: 1,
+                width: "33%"
+              }}
             >Item</Typography>
             <Typography
               variant="h6"
@@ -202,41 +210,55 @@ export default function Home() {
                 handleSearch(e);
               }} />
           </Box>
-          <Stack width="800px" height="400px" spacing={2} overflow="auto">
+          <Stack 
+            width="800px" 
+            height="400px"
+            overflow="auto"
+            sx={{
+              spacing: 0,
+            }}
+          >
             {
               showFilteredInventory.map((item) => (
                 <Box
                   key={item.name}
                   width="100%"
-                  height="60px"
+                  height="80px"
                   display="flex"
                   flexWrap="wrap"
                   alignItems="center"
-                  justifyContent="center"
-                  borderBottom="1px solid #333"
+                  borderBottom="2px solid #333"
+                  borderColor="primary.main"
+                  bordershadow={24}
+                  sx={{
+                    margin: "0px"
+                  }}
                   p={2}
                 >
-                  <Typography 
-                  variant="body1"
-                  sx={{
-                    flexGrow: 1,
-                    width: "33%",
-                  }}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      flexGrow: 1,
+                      width: "33%",
+                    }}
                   >{item.name.charAt(0).toUpperCase() + item.name.slice(1)}</Typography>
-                  <Typography 
-                  variant="body1"
-                  sx={{
-                    flexGrow: 1,
-                    width: "33%",
-                  }}
-                  >{item.quantity}</Typography>
-                  <Stack 
-                  direction="row" 
-                  spacing={1}
-                  sx={{
-                    flexGrow: 1,
-                    width: "20%"
-                  }}
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      flexGrow: 1,
+                      width: "33%",
+                    }}
+                  >
+                    {item.quantity}
+                  </Typography>
+                  <Stack
+                    display="flex"
+                    direction="row"
+                    spacing={1}
+                    sx={{
+                      flexGrow: 1,
+                      width: "20%"
+                    }}
                   >
                     <Button
                       variant="outlined"

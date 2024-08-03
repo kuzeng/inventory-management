@@ -177,10 +177,52 @@ export default function Home() {
             display="flex"
             flexWrap="wrap"
             alignItems="center"
+            borderColor="primary.main"
+            bordershadow={24}
+            pl={2}
+            pr={8}
             borderBottom="2px solid #333"
+          >
+            <TextField
+              id="filled-search"
+              label="Search item"
+              type="search"
+              sx={{
+                flexGrow: 1,
+                width: "16%"
+              }}
+              onChange={(e) => {
+                handleSearch(e);
+              }} />
+            <Box
+              sx={{
+                flexGrow: 1,
+                width: "64%"
+              }}
+            >
+            </Box>
+            <Button
+              variant="contained"
+              sx={{
+                ":hover": {
+                  backgroundColor: "secondary.main",
+                  color: "white"
+                },
+                flexGrow: 1,
+                width: "20%"
+              }}
+              onClick={() => handleOpen()}>Add New Item</Button>
+          </Box>
+          <Box
+            width="100%"
+            height="60px"
+            display="flex"
+            flexWrap="wrap"
+            alignItems="center"
             borderColor="primary.main"
             bordershadow={24}
             px={2}
+            borderBottom="2px solid #333"
           >
             <Typography
               variant="h6"
@@ -198,20 +240,15 @@ export default function Home() {
                 width: "40%"
               }}
             >Quantity</Typography>
-            <TextField
-              id="filled-search"
-              label="Search item"
-              type="search"
+            <Box
               sx={{
                 flexGrow: 1,
                 width: "25%"
               }}
-              onChange={(e) => {
-                handleSearch(e);
-              }} />
+            ></Box>
           </Box>
-          <Stack 
-            width="800px" 
+          <Stack
+            width="800px"
             height="400px"
             overflow="auto"
             sx={{
@@ -227,9 +264,8 @@ export default function Home() {
                   display="flex"
                   flexWrap="wrap"
                   alignItems="center"
-                  borderBottom="2px solid #333"
+                  borderBottom="1px solid #333"
                   borderColor="primary.main"
-                  bordershadow={24}
                   sx={{
                     margin: "0px"
                   }}
@@ -286,15 +322,6 @@ export default function Home() {
             }
           </Stack>
         </Box>
-        <Button
-          variant="contained"
-          sx={{
-            ":hover": {
-              backgroundColor: "secondary.main",
-              color: "white"
-            }
-          }}
-          onClick={() => handleOpen()}>Add New Item</Button>
       </Box>
     </Container>
 

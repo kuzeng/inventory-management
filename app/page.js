@@ -118,14 +118,19 @@ export default function Home() {
               <Typography
                 variant="h6"
                 color="primary.main"
-              >Add Item</Typography>
+              >ADD NEW ITEM</Typography>
               <Button
                 onClick={handleClose}
                 variant="outlined"
               >Cancel</Button>
             </Box>
 
-            <Stack width="100%" direction="row" spacing={2}>
+            <Stack 
+              width="100%" 
+              direction="row" 
+              spacing={2}
+              alignItems="center"
+            >
               <TextField
                 variant="outlined"
                 fullWidth
@@ -140,7 +145,8 @@ export default function Home() {
                   ":hover": {
                     backgroundColor: "primary.main",
                     color: "white"
-                  }
+                  },
+                  height: "100%"
                 }}
                 variant="outlined"
                 onClick={() => {
